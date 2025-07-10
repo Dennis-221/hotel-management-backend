@@ -1,0 +1,471 @@
+{
+	"info": {
+		"_postman_id": "0432fc3d-056c-4dd7-8bee-f32626eac930",
+		"name": "Hotel Management System API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22089300"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"manager1\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"manager1\",\n    \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"John Doe\",\n    \"username\": \"john.doe\",\n    \"password\": \"password123\",\n    \"role\": \"Staff\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ROOMS",
+			"item": [
+				{
+					"name": "Get All Rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/rooms",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Room Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"occupied\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/rooms/1/status",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"rooms",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BOOKINGS",
+			"item": [
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"guestId\": 1,\n    \"roomId\": 2,\n    \"checkInDate\": \"2025-07-10\",\n    \"checkOutDate\": \"2025-07-12\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/bookings/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"bookings",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Bookings",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/bookings",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GUESTS",
+			"item": [
+				{
+					"name": "Get Guest By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/guests/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"guests",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HOUSEKEEPING",
+			"item": [
+				{
+					"name": "Get Schedule",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/housekeeping/schedule",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"housekeeping",
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RESTAURANT",
+			"item": [
+				{
+					"name": "Get Menu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/restaurant/menu",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"restaurant",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BILLS",
+			"item": [
+				{
+					"name": "Get Bill",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/bills/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"bills",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "INVENTORY",
+			"item": [
+				{
+					"name": "Get Inventory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/inventory",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "REPORTS",
+			"item": [
+				{
+					"name": "Occupancy Report",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/reports/occupancy",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"occupancy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AMENITIES",
+			"item": [
+				{
+					"name": "Check Spa Availability",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/amenities/spa/availability?date=2025-07-15&time=10:00",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"amenities",
+								"spa",
+								"availability"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-07-15"
+								},
+								{
+									"key": "time",
+									"value": "10:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "REQUESTS",
+			"item": [
+				{
+					"name": "Create Request",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"roomId\": 2,\n    \"type\": \"maintenance\",\n    \"priority\": \"high\",\n    \"description\": \"AC not cooling\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/requests/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"requests",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "STAFF",
+			"item": [
+				{
+					"name": "View Schedule",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{JWT}}"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/api/staff/schedule",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"staff",
+								"schedule"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "JWT",
+			"value": ""
+		}
+	]
+}

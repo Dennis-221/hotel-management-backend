@@ -32,8 +32,3 @@ function runSqlFile(filePath) {
     db.close();
   }
 })();
-
-// MAnager token
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Ik1hbmFnZXIiLCJlbXBsb3llZUlkIjoiRU1QMDAxIiwiaWF0IjoxNzUyMDM1NTkxLCJleHAiOjE3NTIwNjQzOTF9.N2D3KveSH4TdvTmWElQNIMC3_X4ItnQZQDzLkaOQRLY
-// Receptionist token
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IlJlY2VwdGlvbmlzdCIsImVtcGxveWVlSWQiOiJFTVAwMDIiLCJpYXQiOjE3NTIwMzU5MTgsImV4cCI6MTc1MjA2NDcxOH0.ul4h4bqUoUjpLKVDoG89u3w71iEeMf89EM3UK3wtOzM
